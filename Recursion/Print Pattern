@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+int flag=0;
+void pattern(int n,int start)
+{
+    cout<<n<<" ";
+    if(n>0 && flag==0)
+    {
+        pattern(n-5,start);
+    }
+    else if(n!=start)
+    {
+        flag=1;
+        pattern(n+5,start);
+    }
+    return;
+}
+
+int main() {
+	//code
+	int t;
+	cin>>t;
+	int arr[t];
+
+	for(int i=0;i<t;i++)
+	{
+	    cin>>arr[i];
+	}
+	for(int i=0;i<t;i++)
+	{
+	   flag=0;
+	   pattern(arr[i],arr[i]);
+	   cout<<endl;
+	}
+	return 0;
+}
